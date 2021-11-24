@@ -1,15 +1,17 @@
 import random
 import sys
 
-from PyQt5 import uic
 from PyQt5.QtGui import QPainter, QColor
-from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton
 
 
 class MyWidget(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi('UI.ui', self)
+        self.setGeometry(200, 200, 500, 400)
+        self.btn = QPushButton(self)
+        self.btn.move(100, 100)
+        self.btn.resize(80,20)
         self.btn.clicked.connect(self.paint)
         self.do_paint = False
 
@@ -25,7 +27,7 @@ class MyWidget(QMainWindow):
         self.repaint()
 
     def CreateYellowEllipse(self, qp):
-        qp.setBrush(QColor(255, 255, 0))
+        qp.setBrush(QColor(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)))
         f = random.randint(30, 70)
         qp.drawEllipse(random.randint(50, 300), random.randint(50, 300), f, f)
         qp.drawEllipse(random.randint(50, 300), random.randint(50, 300), f, f)
