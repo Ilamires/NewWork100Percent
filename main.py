@@ -30,8 +30,11 @@ class MyWidget(QMainWindow):
         qp.setBrush(QColor(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)))
         f = random.randint(30, 70)
         qp.drawEllipse(random.randint(50, 300), random.randint(50, 300), f, f)
+        f = random.randint(30, 70)
         qp.drawEllipse(random.randint(50, 300), random.randint(50, 300), f, f)
+        f = random.randint(30, 70)
         qp.drawEllipse(random.randint(50, 300), random.randint(50, 300), f, f)
+        f = random.randint(30, 70)
         qp.drawEllipse(random.randint(50, 300), random.randint(50, 300), f, f)
 
 
